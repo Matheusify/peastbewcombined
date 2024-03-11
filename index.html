@@ -139,9 +139,20 @@
       "UC7pJJACats7suFVfu6ZGSfw", //A.P Statitics
       "UC4clLOlxvvcDbpi2Q_ujQlQ", //Stats Community Visualized
       "UC4XhD_74_TIiJlT8vtk7_-A", //sw | Barras G
+      "UCgG5aRcYGzPPB4UG3mS-ZNg", //Graphify
+      "UCIvilFSgSBmjYkqCcDpnUjw", //JipStats
+      "UCNJGgbNSky29GEfCRMKM9jA", //GNZGUY
     ];
     var numbe1r = 0;
     var wor1k = [];
+
+        var studiocount = [
+      "UCgG5aRcYGzPPB4UG3mS-ZNg", //Graphify
+      "UCIvilFSgSBmjYkqCcDpnUjw", //JipStats
+      "UCNJGgbNSky29GEfCRMKM9jA", //GNZGUY
+    ];
+    var numbe2r = 0;
+    var wor2k = [];
 
     function render() {
       datas();
@@ -163,14 +174,14 @@ fetch("https://mixerno.space/api/youtube-channel-counter/user/"+ Channels[i] + "
           .then((data) => {
             work[i] = data.counts[0].count;
           });
-      }
+      };
       for (let i = 0; i < Channel1s.length; i++) {
 fetch("https://nia-statistics.com/api/get?platform=youtube&type=channel&id="+ Channel1s[i] + "")
           .then((res) => res.json())
           .then((data) => {
             wor1k[i] = data.estSubCount;
           });
-    }
+    };
   }
 
 
