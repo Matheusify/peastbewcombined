@@ -1,0 +1,123 @@
+:root {
+    --text-color: white;
+    --font: "Roboto";
+    --fon2: "Ubuntu";
+    --weight: "700";
+    --name: "212";
+  }
+
+
+  body {
+    background-color: black;
+  }
+
+  #viewchart {
+    position: absolute;
+    height: 150px;
+    width: 570px;
+    top: 190px;
+    font-size: 40px;
+    scale: 1;
+    z-index: -1;
+  }
+
+
+#count {
+    font-family: var(--font);
+    font-weight: 700;
+    position: absolute;
+    top: 190px;
+    font-size: 110px;
+  }
+
+  #likechart {
+    position: absolute;
+    height: 150px;
+    width: 570px;
+    top: 360px;
+    font-size: 40px;
+    scale: 1;
+    z-index: -1;
+  }
+
+  #likes {
+    font-family: var(--font);
+    font-weight: 700;
+    position: absolute;
+    top: 360px;
+    font-size: 110px;
+  }
+
+  #api {
+    font-family: var(--font);
+    font-weight: 700;
+    position: absolute;
+    top: 160px;
+    left: 60px;
+    font-size: 16px;
+  }
+
+  #videoname {
+    font-family: var(--fon2);
+    font-size: 16px;
+    color: white;
+    position: absolute;
+    top: 130px;
+  }
+
+  #divisor {
+    font-family: var(--fon2);
+    color: white;
+    position: absolute;
+    top: 160px;
+    font-size: 16px;
+  }
+
+  #abdivisor {
+    font-family: var(--fon2);
+    color: white;
+    position: absolute;
+    top: 350px;
+    font-size: 16px;
+  }
+
+  #uploadedtime {
+      font-family: var(--font);
+      font-weight: 700;
+      position: absolute;
+      top: 530px;
+      font-size: 80px;
+    }
+
+    #uploadedtimde {
+      font-family: var(--font);
+      font-weight: 700;
+      position: absolute;
+      top: 615px;
+      font-size: 66px;
+    }
+
+    #timetext {
+      font-family: var(--font);
+      font-weight: 700;
+      position: absolute;
+      top: 520px;
+      font-size: 16px;
+    }
+    
+
+img {
+   position: absolute;
+   top: 0px;
+  }
+
+.flex {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  
+  .flex > div {
+    display: flex;
+    flex-direction: column;
+  }
