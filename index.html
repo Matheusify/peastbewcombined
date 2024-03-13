@@ -27,7 +27,7 @@
     rel="noopenernoreferrer"
 		title="Nia Statistics">
     Nia's Stream Estimations
-		</a> and <img
+		</a>, <img
     src="images/mixernologo.png"
     alt=""
     id="mxlogo"
@@ -38,10 +38,20 @@
     rel="noopenernoreferrer"
 		title="The advanced way of">
     Mixerno.Space
-  </a>
+  </a> and <img
+  src="images/nextcountslogo.png"
+  alt=""
+  id="nxlogo"
+  width="24"/> <a
+  href="https://nextcounts.com/"
+  target="_blank"
+  rel="noopenernoreferrer"
+  title="Live YouTube Subscriber Count for Subscriber Battles">
+  NextCounts</a>
 <div id=text><span id="mbtext" style="color: #058aff" class="text">PeastBew Group Combined Count</span>
 <div id=show><span id="count" style="color: white" class="odometer">0</span>
 	<div id=tex1><span id="mbtex1" style="color: white" class="tex1">Subscribers [ESTIMATED]</span>
+    <div id=goalcounter><span id="goal" style="color: yellow" class="odometer">NaN: NaN</span>
     <div id=tex21><span id="mbtex21" style="color: white" class="tex21"><img 
       src="images/githublogo.png"
       alt=""
@@ -61,6 +71,13 @@
 
    #powered {
       font-size: 16pt;
+      font-family: Roboto;
+      font-weight: 700;
+		 	text-align: center;
+    }
+
+    #goalcounter {
+      font-size: 32pt;
       font-family: Roboto;
       font-weight: 700;
 		 	text-align: center;
@@ -164,6 +181,9 @@
         return a + b;
       }, 0);
       count.innerHTML = Math.floor(number + numbe1r + numbe2r);
+      nextMilestone = Math.abs(numbe1r + numbe2r + number - 8000000)
+      goalnumber = "8M"
+      goal.textContent = `${goalnumber}: ${nextMilestone}`
     }
 
     
