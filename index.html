@@ -139,9 +139,6 @@
       "UC7pJJACats7suFVfu6ZGSfw", //A.P Statitics
       "UC4clLOlxvvcDbpi2Q_ujQlQ", //Stats Community Visualized
       "UC4XhD_74_TIiJlT8vtk7_-A", //sw | Barras G
-      "UCgG5aRcYGzPPB4UG3mS-ZNg", //Graphify
-      "UCIvilFSgSBmjYkqCcDpnUjw", //JipStats
-      "UCNJGgbNSky29GEfCRMKM9jA", //GNZGUY
       "UCKglMi0TMog1M3-iGU-Ws2g", //TES Graphics
     ];
     var numbe1r = 0;
@@ -163,7 +160,10 @@
       numbe1r = wor1k.reduce(function (a, b) {
         return a + b;
       }, 0);
-      count.innerHTML = Math.floor(number + numbe1r);
+      numbe2r = wor2k.reduce(function (a, b) {
+        return a + b;
+      }, 0);
+      count.innerHTML = Math.floor(number + numbe1r + numbe2r);
     }
 
     
@@ -181,6 +181,14 @@ fetch("https://nia-statistics.com/api/get?platform=youtube&type=channel&id="+ Ch
           .then((res) => res.json())
           .then((data) => {
             wor1k[i] = data.estSubCount;
+          });
+    };
+    for (let i = 0; i < studiocount.length; i++) {
+fetch("https://api-v2.nextcounts.com/api/youtube/channel/"+ studiocount[i] + "")
+          .then((res) => res.json())
+          .then((data) => {
+            wor2k[i] = data.subcount;
+            console.log(wor2k)
           });
     };
   }
