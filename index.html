@@ -9,6 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap" rel="stylesheet">
   <link rel=stylesheet href="../../assets/ess/odometer.css">
   <script src="../../assets/ess/odometer.js"></script>
+  <script src="../../counters/peastbewgroupcombined/assets/ess/countup.js"></script>
 	<link rel="stylesheet" href="../../assets/css/embed.css" />
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
@@ -47,23 +48,30 @@
   target="_blank"
   rel="noopenernoreferrer"
   title="Live YouTube Subscriber Count for Subscriber Battles">
-  NextCounts</a>
-<div id=text><span id="mbtext" style="color: #058aff" class="text">PeastBew Group Combined Count</span>
-<div id=show><span id="count" style="color: white" class="odometer">0</span>
-	<div id=tex1><span id="mbtex1" style="color: white" class="tex1">Subscribers [ESTIMATED]</span>
-    <div id=goalcounter><span id="goal" style="color: yellow" class="odometer">NaN: NaN</span>
-    <div id=tex21><span id="mbtex21" style="color: white" class="tex21"><img 
-      src="images/githublogo.png"
-      alt=""
-      id="githublogo"
-      width="24"  
-      />  <a
-        href="https://github.com/Matheusify/peastbewcombined"
-        target="_blank"
-        rel="noopenernoreferrer"
-        >
-        Source Code
-      </a></span>
+  NextCounts</a></span></div>
+<div id=text><span id="mbtext" style="color: #058aff" class="text">PeastBew Group Combined Count</span></div>
+<div id=show><span id="count" style="color: white" class="odometer">0</span></div>
+	<div id=tex1><p id="mbtex1" style="color: white" class="tex1">Subscribers [ESTIMATED]</p></div>
+  <div class="flex">
+    <div>
+      <div class="goalcounter">
+    <div id=goalcounter><p id="goal" style="color: yellow" class="odometer">NaN</p></div>
+    <div id="goaltext"><p id="textgoal" style="color: yellow"> subs left until 8M Subscribers</p></div>
+      </div>
+    </div>
+  </div>
+  <div id=tex21><span id="mbtex21" style="color: white" class="tex21"><img 
+    src="images/githublogo.png"
+    alt=""
+    id="githublogo"
+    width="24"  
+    />  <a
+      href="https://github.com/Matheusify/peastbewcombined"
+      target="_blank"
+      rel="noopenernoreferrer"
+      >
+      Source Code
+    </a></span></div>
   <style>
     body {
       background-color: black;
@@ -74,13 +82,19 @@
       font-family: Roboto;
       font-weight: 700;
 		 	text-align: center;
+      margin-top: 0px;
     }
 
     #goalcounter {
       font-size: 32pt;
       font-family: Roboto;
       font-weight: 700;
-		 	text-align: center;
+    }
+
+    #goaltext {
+      font-size: 32pt;
+      font-family: Roboto;
+      font-weight: 700;
     }
 
     #tex21 {
@@ -88,6 +102,15 @@
       font-family: Roboto;
       font-weight: 700;
 		 	text-align: center;
+      margin-top: -25px;
+    }
+
+    #mbtex1 {
+      font-size: 24pt;
+      font-family: Roboto;
+      font-weight: 700;
+		 	text-align: center;
+       margin-top: -5px;
     }
 		
     #mbtext {
@@ -116,6 +139,27 @@
       text-align: center;
     }
 
+    .goalcounter {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+        margin-top: -60px;
+      }
+
+        .flex {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+        }
+        
+        .flex > div {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+
     @font-face {
       font-family: RobotoOld;
       src: url("https://axern.space/font/Roboto-Regular.tff");
@@ -124,6 +168,21 @@
   </head>
 
   <script>
+
+const countup = new CountUp('goal', 0, 0);
+
+function calcInOne(array) {
+  let number = 0;
+  for (var i = 1; i < array.length; i++) {
+    number += array[i] - array[i - 1];
+  }
+  return number;
+}
+
+function numberWithCommas(x) {
+  return x.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+}
+
     var Channels = [
       "UCFqeiSR8Cnqr5N4F9AEpTMA", //Milrus
       "UCib7yUzjxLNjNHODolHEySQ", //MrGraficas
@@ -183,7 +242,7 @@
       count.innerHTML = Math.floor(number + numbe1r + numbe2r);
       nextMilestone = Math.abs(numbe1r + numbe2r + number - 8000000)
       goalnumber = "8M"
-      goal.textContent = `${goalnumber}: ${nextMilestone}`
+      goal.innerHTML = `${nextMilestone}`
     }
 
     
@@ -208,7 +267,6 @@ fetch("https://api-v2.nextcounts.com/api/youtube/channel/"+ studiocount[i] + "")
           .then((res) => res.json())
           .then((data) => {
             wor2k[i] = data.subcount;
-            console.log(wor2k)
           });
     };
   }
