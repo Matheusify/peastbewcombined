@@ -7,8 +7,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap" rel="stylesheet">
-  <link rel=stylesheet href="../../assets/ess/odometer.css">
-  <script src="../../assets/ess/odometer.js"></script>
+  <link rel=stylesheet href="../../counters/peastbewgroupcombined/assets/ess/odometer.css">
+  <script src="../../counters/peastbewgroupcombined/assets/ess/odometer.js"></script>
   <script src="../../assets/ess/countup.js"></script>
 	<link rel="stylesheet" href="../../assets/css/embed.css" />
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet">
@@ -147,6 +147,14 @@
         margin-top: -60px;
       }
 
+      .goalcounter {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+        margin-top: -60px;
+      }
+
         .flex {
           display: flex;
           flex-direction: row;
@@ -193,6 +201,7 @@
       "UCSMErcbTieSS4Q1CS7IXkFA", //VGtales
       "UChS-OWykpk-OCiw4EHIzO8g", //PIX3LITO
       "UCdsyNFXknLbhy38n7dc-H7w", //NickPlayYT
+      "UC9AzKAmaXnpnTgYEz5kWBkg" //Banana Commenter
     ];
     var number = 0;
     var work = [];
@@ -227,7 +236,7 @@
         return a + b;
       }, 0);
       count.innerHTML = Math.floor(number + numbe1r + numbe2r);
-      nextMilestone = Math.abs(numbe1r + numbe2r + number - 8000000)
+      nextMilestone = Math.abs(numbe1r + numbe2r + number - 9000000)
       goalnumber = "8M"
       goal.innerHTML = `${nextMilestone}`
     }
